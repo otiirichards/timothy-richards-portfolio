@@ -453,7 +453,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
   max-width:900px;width:100%;max-height:90vh;overflow-y:auto;padding:36px;position:relative;
 }
 .modal-box::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.04) 0%,transparent 55%);pointer-events:none;border-radius:inherit}
-.modal-close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--text-mid);font-size:1.2rem;cursor:pointer;transition:color var(--t)}
+.modal-close{position:fixed;top:18px;right:24px;background:rgba(11,16,24,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--text);font-size:1rem;cursor:pointer;transition:color var(--t);z-index:9999;}
 .modal-close:hover{color:var(--text)}
 .modal-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:6px}
 .modal-sub{font-size:0.78rem;color:var(--text-dim);margin-bottom:26px}
@@ -968,7 +968,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 <!-- CAMPAIGN GALLERY MODAL -->
 <div class="modal-overlay" id="galleryModal" style="display:none" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow='';}">
   <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('galleryModal').style.display='none';document.body.style.overflow=''"><i class="fa fa-times"></i></button>
+   <button class="modal-close" onclick="event.stopPropagation();document.getElementById('galleryModal').style.display='none';document.body.style.overflow=''"><i class="fa fa-times"></i></button>
     <div class="modal-title">WUF 12 — Business & Foundations Campaign</div>
     <div class="modal-sub">Multi-platform social media campaign · LinkedIn · Facebook · 182 countries reached</div>
     <div class="modal-grid">
