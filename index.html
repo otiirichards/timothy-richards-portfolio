@@ -1,391 +1,1060 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Timothy Richards — Communications Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Timothy Richards — Strategic Communications Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
-  :root {
-    --ink: #0f0f0f;
-    --paper: #f5f2ec;
-    --accent: #1a3a5c;
-    --gold: #c8972a;
-    --muted: #6b6b6b;
-    --rule: #d4cfc5;
-    --white: #ffffff;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; }
-  nav { position: fixed; top: 0; left: 0; right: 0; background: var(--accent); z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 56px; }
-  .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 17px; color: var(--white); letter-spacing: 0.02em; }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--white); }
-  .hero { margin-top: 56px; background: var(--accent); color: var(--white); padding: 96px 48px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
-  .hero-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(42px, 5vw, 68px); font-weight: 900; line-height: 1.05; margin-bottom: 24px; }
-  .hero-sub { font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.78); max-width: 460px; margin-bottom: 36px; }
-  .hero-cta { display: inline-block; background: var(--gold); color: var(--ink); font-weight: 600; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 14px 28px; transition: opacity 0.2s; }
-  .hero-cta:hover { opacity: 0.88; }
-  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; align-self: stretch; }
-  .stat-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 28px 24px; animation: fadeUp 0.6s ease both; }
-  .stat-box:nth-child(1) { animation-delay: 0.1s; }
-  .stat-box:nth-child(2) { animation-delay: 0.2s; }
-  .stat-box:nth-child(3) { animation-delay: 0.3s; }
-  .stat-box:nth-child(4) { animation-delay: 0.4s; }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 6px; }
-  .stat-label { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.4; }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-  section { padding: 80px 48px; }
-  section:nth-child(even) { background: var(--white); }
-  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 40px); font-weight: 700; line-height: 1.15; margin-bottom: 12px; color: var(--accent); }
-  .section-intro { font-size: 15px; color: var(--muted); max-width: 560px; margin-bottom: 52px; line-height: 1.7; }
-  .rule { width: 48px; height: 3px; background: var(--gold); margin: 16px 0 36px; }
-  .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-  .work-card { background: var(--paper); border: 1px solid var(--rule); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
-  .work-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
-  .card-header { background: var(--accent); padding: 24px; position: relative; min-height: 100px; display: flex; flex-direction: column; justify-content: flex-end; }
-  .card-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
-  .card-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--white); line-height: 1.2; }
-  .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
-  .card-desc { font-size: 14px; color: var(--muted); line-height: 1.65; flex: 1; }
-  .card-role { font-size: 12px; font-weight: 600; color: var(--accent); background: rgba(26,58,92,0.07); display: inline-block; padding: 4px 10px; border-radius: 2px; letter-spacing: 0.04em; }
-  .card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; border-bottom: 1.5px solid var(--gold); padding-bottom: 1px; transition: opacity 0.2s; width: fit-content; }
-  .card-link:hover { opacity: 0.7; }
-  .card-link::after { content: " →"; }
-  .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 52px; }
-  .pillar { background: var(--accent); color: var(--white); padding: 28px 24px; position: relative; overflow: hidden; }
-  .pillar::before { content: attr(data-num); position: absolute; top: -12px; right: 16px; font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 900; color: rgba(255,255,255,0.06); line-height: 1; }
-  .pillar-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; margin-bottom: 10px; position: relative; z-index: 1; }
-  .pillar-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.55; position: relative; z-index: 1; }
-  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
-  .about-block p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 18px; }
-  .about-block strong { color: var(--ink); }
-  .skills-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-  .skill-tag { font-size: 12px; font-weight: 500; color: var(--accent); background: rgba(26,58,92,0.08); padding: 5px 12px; border: 1px solid rgba(26,58,92,0.15); letter-spacing: 0.02em; }
-  .org-block { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
-  .org-block:last-child { border-bottom: none; }
-  .org-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
-  .org-name { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 2px; }
-  .org-role { font-size: 13px; color: var(--muted); }
-  .contact-strip { background: var(--ink); color: var(--white); padding: 60px 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-  .contact-headline { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; max-width: 380px; line-height: 1.2; }
-  .contact-links { display: flex; flex-direction: column; gap: 12px; }
-  .contact-item { display: flex; align-items: center; gap: 12px; font-size: 14px; }
-  .contact-item a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
-  .contact-item a:hover { color: var(--gold); }
-  .contact-icon { width: 32px; height: 32px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
-  footer { background: var(--accent); color: rgba(255,255,255,0.45); text-align: center; padding: 20px 48px; font-size: 12px; letter-spacing: 0.04em; }
-  @media (max-width: 768px) {
-    nav { padding: 0 20px; }
-    .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; padding: 60px 24px 48px; gap: 40px; }
-    section { padding: 56px 24px; }
-    .pillar-grid { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .contact-strip { flex-direction: column; padding: 48px 24px; }
-    .work-grid { grid-template-columns: 1fr; }
-  }
+
+/* ═══════════ DESIGN SYSTEM — iOS 26 LIQUID GLASS ═══════════ */
+:root {
+  --bg:         #06090F;
+  --gold:       #C8A96A;
+  --gold-m:     rgba(200,169,106,0.14);
+  --gold-b:     rgba(200,169,106,0.3);
+  --blue:       #5A9FE0;
+  --blue-m:     rgba(90,159,224,0.14);
+  --green:      #4CAF8C;
+  --text:       #EEE8DC;
+  --text-mid:   #8FA0B4;
+  --text-dim:   #4A5970;
+  --r:          14px;
+  --rl:         22px;
+  --t:          0.32s;
+  --ease:       cubic-bezier(0.4,0,0.2,1);
+  --sgold:      0 4px 28px rgba(200,169,106,0.28);
+
+  /* ── Liquid Glass recipe ── */
+  --glass:      rgba(14, 22, 38, 0.5);
+  --glass-hi:   rgba(255,255,255,0.07);   /* surface tint  */
+  --glass-edge: rgba(255,255,255,0.11);   /* border        */
+  --glass-spec: rgba(255,255,255,0.14);   /* specular top  */
+  --glass-blur: blur(28px) saturate(200%);
+  --glass-shadow: inset 0 1.5px 0 var(--glass-spec), inset 0 -1px 0 rgba(0,0,0,0.12), 0 8px 40px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.2);
+  --glass-hover: rgba(255,255,255,0.04);
+}
+
+/* ═══════════ RESET ═══════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background: var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+/* Ambient gradient mesh — the "light source" the glass refracts */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 55% at 15% 10%, rgba(74,143,212,0.22) 0%, transparent 52%),
+    radial-gradient(ellipse 60% 50% at 88% 18%, rgba(200,169,106,0.13) 0%, transparent 52%),
+    radial-gradient(ellipse 50% 60% at 68% 90%, rgba(147,112,219,0.13) 0%, transparent 50%),
+    radial-gradient(ellipse 55% 45% at 4%  78%, rgba(76,175,140,0.09) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(74,143,212,0.04) 0%, transparent 70%);
+}
+/* Everything above the gradient */
+section{position:relative;}footer{position:relative;}
+#mm{position:fixed;z-index:999}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ═══════════ PROGRESSIVE REVEAL ═══════════
+   Without JS: all content is fully visible.
+   JS adds .js-ready to body → animations activate.
+   This guarantees content always shows.
+═══════════════════════════════════════════ */
+body.js-ready .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease}
+body.js-ready .reveal.in-view{opacity:1;transform:none}
+body.js-ready .d1{transition-delay:0.08s}
+body.js-ready .d2{transition-delay:0.16s}
+body.js-ready .d3{transition-delay:0.24s}
+body.js-ready .d4{transition-delay:0.32s}
+
+/* ═══════════ LAYOUT ═══════════ */
+.wrap{width:92%;max-width:1160px;margin:0 auto}
+.section{padding:110px 0}
+.lbl{display:inline-flex;align-items:center;gap:10px;font-size:0.7rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.lbl::before{content:'';display:block;width:26px;height:2px;background:var(--gold);border-radius:2px}
+h2.st{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:700;line-height:1.2;color:var(--text);margin-bottom:14px}
+.sub{font-size:1rem;color:var(--text-mid);max-width:520px;line-height:1.8}
+
+/* ═══════════ NAV — floating glass pill ═══════════ */
+nav{
+  position:fixed !important;
+  top:16px;left:50%;
+  transform:translateX(-50%);
+  z-index:9999;
+  isolation:isolate;
+  width:92%;max-width:1100px;
+  padding:11px 11px 11px 26px;
+  background:rgba(11,16,24,0.88);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:50px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 8px 32px rgba(0,0,0,0.5);
+  transition:box-shadow 0.3s,background 0.3s;
+}
+nav.sc{background:rgba(8,12,20,0.96);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 14px 48px rgba(0,0,0,0.7);}
+.ni{display:flex;align-items:center;justify-content:space-between}
+.nl{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700}
+.nl span{color:var(--gold)}
+.nm{display:flex;align-items:center;gap:32px;list-style:none}
+.nm a{font-size:0.76rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-mid);transition:color var(--t);position:relative}
+.nm a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width var(--t)}
+.nm a:hover,.nm a.active{color:var(--text)}
+.nm a:hover::after,.nm a.active::after{width:100%}
+.ncta{padding:8px 20px;border:1px solid var(--gold);border-radius:50px;font-size:0.73rem;font-weight:600;color:var(--gold)!important;transition:background var(--t),color var(--t)!important}
+.ncta::after{display:none!important}
+.ncta:hover{background:var(--gold)!important;color:var(--bg)!important}
+.nh{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nh span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
+.mm{display:none;position:fixed;inset:0;background:rgba(6,9,15,0.88);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mm.open{display:flex}
+.mm a{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--text);transition:color var(--t)}
+.mm a:hover{color:var(--gold)}
+.mc{position:absolute;top:22px;right:5%;background:none;border:none;color:var(--text);font-size:1.3rem;cursor:pointer}
+
+/* ═══════════ HERO ═══════════ */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:120px;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;pointer-events:none}
+.hgl{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;mask-image:radial-gradient(ellipse at center,black 20%,transparent 75%)}
+.hi{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.hbadge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--gold-m);border:1px solid var(--gold-b);border-radius:50px;font-size:0.69rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;backdrop-filter:blur(8px)}
+.hh{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.6vw,3.7rem);font-weight:700;line-height:1.15;margin-bottom:20px}
+.hh em{font-style:italic;color:var(--gold)}
+.hs{font-size:0.98rem;color:var(--text-mid);max-width:460px;line-height:1.88;margin-bottom:36px}
+.acts{display:flex;gap:14px;flex-wrap:wrap}
+.bp{display:inline-flex;align-items:center;gap:9px;padding:13px 30px;background:var(--gold);color:var(--bg);font-size:0.79rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border-radius:50px;transition:transform var(--t),box-shadow var(--t)}
+.bp:hover{transform:translateY(-2px);box-shadow:var(--sgold)}
+.bs{
+  display:inline-flex;align-items:center;gap:9px;padding:13px 30px;
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);
+  box-shadow:var(--glass-shadow);
+  color:var(--text-mid);font-size:0.79rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border-radius:50px;
+  transition:border-color var(--t),color var(--t),transform var(--t);
+}
+.bs:hover{border-color:rgba(200,169,106,0.4);color:var(--text);transform:translateY(-2px)}
+.hloc{display:flex;align-items:center;gap:8px;font-size:0.75rem;color:var(--text-dim);margin-top:26px}
+.hloc i{color:var(--gold);font-size:0.7rem}
+.adot{display:inline-block;width:7px;height:7px;background:var(--green);border-radius:50%;margin-right:4px;box-shadow:0 0 0 3px rgba(76,175,140,0.2);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(76,175,140,0.2)}50%{box-shadow:0 0 0 7px rgba(76,175,140,0.05)}}
+
+/* Stat cards — glass */
+.hstats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sc{
+  background:var(--glass);
+  backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);
+  border-radius:var(--rl);padding:26px 22px;
+  position:relative;overflow:hidden;
+  box-shadow:var(--glass-shadow);
+  transition:transform var(--t),box-shadow var(--t);
+}
+/* Lens shimmer overlay */
+.sc::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.05) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.02) 100%);border-radius:inherit;pointer-events:none}
+/* Gold accent top bar */
+.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;opacity:0;transition:opacity var(--t);background:linear-gradient(90deg,var(--gold),rgba(200,169,106,0.2),transparent)}
+.sc.sg{border-color:rgba(200,169,106,0.22);background:linear-gradient(135deg,rgba(200,169,106,0.09),var(--glass))}
+.sc.sg::before,.sc:hover::before{opacity:1}
+.sc:hover{transform:translateY(-4px);box-shadow:inset 0 1.5px 0 var(--glass-spec),0 16px 48px rgba(0,0,0,0.4)}
+.sn{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;line-height:1;margin-bottom:6px}
+.sn span{color:var(--gold)}
+.sd2{font-size:0.74rem;color:var(--text-mid);line-height:1.5}
+
+/* ═══════════ ABOUT — EXTENDED LAYOUT ═══════════ */
+.about-bottom{margin-top:32px}
+.hist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.hist-item{
+  padding:14px 18px;
+  background:var(--glass);
+  backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);
+  border-radius:var(--r);
+  box-shadow:var(--glass-shadow);
+  transition:border-color var(--t),box-shadow var(--t),transform var(--t);
+}
+.hist-item:hover{
+  border-color:var(--gold-b);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 0 20px rgba(200,169,106,0.14),0 8px 32px rgba(0,0,0,0.4);
+  transform:translateY(-2px);
+}
+.hist-period{font-size:0.65rem;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px}
+.hist-role{font-size:0.84rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.hist-org{font-size:0.74rem;color:var(--gold)}
+.about-edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:920px){
+  .about-exp-wrap{grid-template-columns:1fr}
+  .about-edu-grid{grid-template-columns:1fr}
+}
+
+#about{background:rgba(255,255,255,0.018);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge)}
+.ai{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+.ab p{font-size:0.95rem;color:var(--text-mid);line-height:1.9;margin-bottom:16px}
+.ab p strong{color:var(--text);font-weight:600}
+.etags{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:26px}
+.etag{
+  display:flex;align-items:center;gap:9px;font-size:0.79rem;color:var(--text-mid);padding:9px 12px;
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);border-radius:10px;
+  box-shadow:var(--glass-shadow);
+}
+.etag i{color:var(--gold);font-size:0.74rem;flex-shrink:0}
+.scard{
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);border-radius:var(--rl);padding:26px;margin-bottom:16px;
+  box-shadow:var(--glass-shadow);position:relative;overflow:hidden;
+}
+.scard::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.04) 0%,transparent 60%);pointer-events:none;border-radius:inherit}
+.slbl{font-size:0.67rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.tli{display:flex;gap:13px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.tli:last-child{border-bottom:none;padding-bottom:0}
+.tld{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
+.tld.dim{background:var(--text-dim)}
+.tlt{font-size:0.81rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.tls{font-size:0.72rem;color:var(--text-dim);line-height:1.4}
+.lpills{display:flex;gap:9px;flex-wrap:wrap}
+.lp{padding:5px 14px;border:1px solid var(--glass-edge);border-radius:50px;font-size:0.75rem;color:var(--text-mid);background:var(--glass);backdrop-filter:blur(8px)}
+.lp.on{background:var(--gold-m);border-color:var(--gold-b);color:var(--gold)}
+
+/* ═══════════ CASE STUDIES ═══════════ */
+#case-studies{background:transparent}
+.csi{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:60px;gap:40px}
+.cc{
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);border-radius:var(--rl);overflow:hidden;margin-bottom:22px;
+  box-shadow:var(--glass-shadow);
+  transition:border-color var(--t),transform var(--t),box-shadow var(--t);
+}
+.cc:hover{border-color:var(--gold-b);transform:translateY(-4px);box-shadow:inset 0 1.5px 0 var(--glass-spec),0 20px 60px rgba(0,0,0,0.45)}
+.cci{display:grid;grid-template-columns:1fr 1.45fr;min-height:380px}
+.cc.rev .cci{grid-template-columns:1.45fr 1fr;direction:rtl}
+.cc.rev .cci>*{direction:ltr}
+.cv{position:relative;overflow:hidden;min-height:300px;background:rgba(10,16,28,0.6)}
+.cvi{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.6s ease}
+.cc:hover .cvi{transform:scale(1.05)}
+.cvo{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,9,15,0.88) 0%,rgba(6,9,15,0.45) 100%)}
+.cvc{position:absolute;inset:0;padding:30px;display:flex;flex-direction:column;justify-content:space-between;z-index:2}
+.ctag{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:50px;font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;width:fit-content;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.tg{background:rgba(200,169,106,0.18);color:var(--gold);border:1px solid rgba(200,169,106,0.32);box-shadow:inset 0 1px 0 rgba(200,169,106,0.2)}
+.tb{background:rgba(90,159,224,0.18);color:var(--blue);border:1px solid rgba(90,159,224,0.32);box-shadow:inset 0 1px 0 rgba(90,159,224,0.2)}
+.tgr{background:rgba(76,175,140,0.18);color:var(--green);border:1px solid rgba(76,175,140,0.32);box-shadow:inset 0 1px 0 rgba(76,175,140,0.2)}
+.tp{background:rgba(147,112,219,0.18);color:#9370DB;border:1px solid rgba(147,112,219,0.32);box-shadow:inset 0 1px 0 rgba(147,112,219,0.2)}
+.cvstat{
+  background:rgba(6,9,15,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--glass-edge);border-radius:var(--r);padding:16px 20px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.cvn{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1}
+.cvn span{color:var(--gold)}
+.cvl{font-size:0.67rem;color:var(--text-mid);margin-top:3px}
+.cct{padding:38px 40px;display:flex;flex-direction:column;justify-content:center}
+.cnum{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:rgba(200,169,106,0.07);line-height:1;margin-bottom:-4px}
+.ctitle{font-family:'Playfair Display',serif;font-size:1.38rem;font-weight:700;line-height:1.28;margin-bottom:6px}
+.cctx{font-size:0.77rem;color:var(--text-dim);margin-bottom:18px}
+.cbs{display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
+.cbl{font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.cbt{font-size:0.82rem;color:var(--text-mid);line-height:1.72}
+.cbt strong{color:var(--text);font-weight:600}
+.cms{display:flex;gap:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap}
+.cmv{font-family:'Playfair Display',serif;font-size:1.32rem;font-weight:700}
+.cmv span{color:var(--gold)}
+.cmd{font-size:0.67rem;color:var(--text-dim)}
+.cls{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
+.cl{display:inline-flex;align-items:center;gap:7px;font-size:0.75rem;font-weight:600;color:var(--gold);transition:gap var(--t)}
+.cl:hover{gap:12px}
+.cl i{font-size:0.67rem}
+.cl.sec{color:var(--text-mid)}
+.cl.sec:hover{color:var(--text)}
+
+/* ═══════════ SKILLS ═══════════ */
+#skills{background:rgba(255,255,255,0.018);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge)}
+.sclbl{font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin:38px 0 13px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:13px}
+.skc{
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);border-radius:var(--rl);
+  padding:24px 13px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;
+  box-shadow:var(--glass-shadow);
+  transition:border-color var(--t),transform var(--t),box-shadow var(--t);
+  position:relative;overflow:hidden;cursor:default;
+}
+/* lens shimmer on skills */
+.skc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.05) 0%,transparent 55%);border-radius:inherit;pointer-events:none}
+.skc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;opacity:0;transition:opacity var(--t);border-radius:0 0 var(--rl) var(--rl)}
+.skc:hover{transform:translateY(-5px);box-shadow:inset 0 1.5px 0 var(--glass-spec),0 16px 48px rgba(0,0,0,0.4)}
+.skc:hover::after{opacity:1}
+.kg::after{background:var(--gold)}.kg:hover{border-color:rgba(200,169,106,0.35)}
+.kb::after{background:var(--blue)}.kb:hover{border-color:rgba(90,159,224,0.35)}
+.kgr::after{background:var(--green)}.kgr:hover{border-color:rgba(76,175,140,0.35)}
+.kr::after{background:#E05A5A}.kr:hover{border-color:rgba(224,90,90,0.35)}
+.kp::after{background:#9370DB}.kp:hover{border-color:rgba(147,112,219,0.35)}
+.siw{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:transform var(--t)}
+.skc:hover .siw{transform:scale(1.1) rotate(-3deg)}
+.ig{background:var(--gold-m);color:var(--gold)}
+.ib{background:var(--blue-m);color:var(--blue)}
+.igr{background:rgba(76,175,140,0.12);color:var(--green)}
+.ir{background:rgba(224,90,90,0.1);color:#E05A5A}
+.ip{background:rgba(147,112,219,0.1);color:#9370DB}
+.aa{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:800;letter-spacing:-0.04em;line-height:1}
+.iid{background:#3d001a}.iid .aa{color:#FF3466}
+.iai{background:#2d1500}.iai .aa{color:#FF9A00}
+.ips{background:#001529}.ips .aa{color:#31A8FF}
+.ipr{background:#0a0033}.ipr .aa{color:#9999FF}
+.iex{background:#2d0000}.iex .aa{color:#FF4444}
+.isf{background:#001829}.isf .aa{color:#00A1E0;font-size:0.82rem}
+.ipb{background:#1a1200}.ipb .aa{color:#F2C811;font-size:0.82rem}
+.iga{background:#001a00}.iga .aa{color:#34A853;font-size:0.85rem}
+.imt{background:#001433}.imt .aa{color:#0668E1;font-size:0.78rem}
+.idr{background:#001429}.idr .aa{color:#0077C0}
+.skn{font-size:0.7rem;font-weight:600;color:var(--text-mid);line-height:1.3}
+.dots{display:flex;gap:3px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--border)}
+.dot.on{background:var(--gold)}
+
+/* ═══════════ EXPERIENCE ═══════════ */
+#experience{background:transparent}
+.exg{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+.ext{position:relative;padding-left:26px}
+.ext::before{content:'';position:absolute;top:8px;bottom:0;left:0;width:1px;background:linear-gradient(to bottom,var(--gold),transparent)}
+.exi{position:relative;padding-bottom:34px;opacity:0.6;transition:opacity var(--t);cursor:pointer}
+.exi:hover,.exi.ae{opacity:1}
+.exi::before{content:'';position:absolute;left:-30px;top:6px;width:8px;height:8px;background:var(--text-dim);border-radius:50%;border:2px solid rgba(6,9,15,0.8);transition:background var(--t),transform var(--t)}
+.exi.ae::before{background:var(--gold);transform:scale(1.4)}
+.epr{font-size:0.67rem;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px}
+.ero{font-weight:600;font-size:0.86rem;color:var(--text);margin-bottom:2px}
+.eor{font-size:0.75rem;color:var(--gold)}
+.epan{
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);border-radius:var(--rl);padding:36px;min-height:280px;
+  box-shadow:var(--glass-shadow);position:relative;overflow:hidden;
+}
+.epan::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.04) 0%,transparent 55%);pointer-events:none}
+.porg{font-size:0.69rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.prol{font-family:'Playfair Display',serif;font-size:1.46rem;font-weight:700;color:var(--text);margin-bottom:7px}
+.pper{font-size:0.77rem;color:var(--text-dim);margin-bottom:22px;display:flex;align-items:center;gap:7px}
+.pdsc{font-size:0.87rem;color:var(--text-mid);line-height:1.84;margin-bottom:20px}
+.pach{display:flex;flex-direction:column;gap:9px}
+.pac{display:flex;gap:11px;align-items:flex-start;font-size:0.81rem;color:var(--text-mid);line-height:1.6}
+.pic{width:20px;height:20px;background:var(--gold-m);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.pic i{font-size:0.5rem;color:var(--gold)}
+
+/* ═══════════ EDUCATION ═══════════ */
+#education{background:rgba(255,255,255,0.018);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge)}
+.edug{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:46px}
+.educ{
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);border-radius:var(--rl);padding:30px;
+  display:flex;gap:18px;align-items:flex-start;
+  box-shadow:var(--glass-shadow);position:relative;overflow:hidden;
+  transition:border-color var(--t),transform var(--t);
+}
+.educ::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.04) 0%,transparent 55%);pointer-events:none}
+.educ:hover{border-color:var(--gold-b);transform:translateY(-3px)}
+.edui{width:46px;height:46px;background:var(--gold-m);border:1px solid var(--gold-b);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.edui i{color:var(--gold);font-size:1.05rem}
+.edud{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.3}
+.edus{font-size:0.78rem;color:var(--gold);font-weight:600;margin-bottom:8px}
+.edust{display:inline-flex;align-items:center;gap:6px;font-size:0.69rem;color:var(--text-mid);padding:3px 10px;background:var(--glass);backdrop-filter:blur(8px);border:1px solid var(--glass-edge);border-radius:50px}
+.edust.act{color:var(--green);background:rgba(76,175,140,0.1);border-color:rgba(76,175,140,0.25)}
+.edust i{font-size:0.54rem}
+
+/* ═══════════ CONTACT ═══════════ */
+#contact{background:transparent}
+.coni{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.cttl{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;line-height:1.3;margin-bottom:16px}
+.cttl em{font-style:italic;color:var(--gold)}
+.cp{font-size:0.92rem;color:var(--text-mid);line-height:1.84;margin-bottom:26px}
+.cits{display:flex;flex-direction:column;gap:11px}
+.cit{
+  display:flex;align-items:center;gap:13px;padding:15px 17px;
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);border-radius:var(--r);
+  box-shadow:var(--glass-shadow);
+  transition:border-color var(--t),transform var(--t);
+}
+a.cit:hover{border-color:var(--gold-b);transform:translateX(5px)}
+.cion{width:37px;height:37px;background:var(--gold-m);border:1px solid var(--gold-b);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cion i{color:var(--gold);font-size:0.83rem}
+.cil{font-size:0.67rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1px}
+.civ{font-size:0.85rem;font-weight:500;color:var(--text)}
+.avc{
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid rgba(76,175,140,0.25);border-radius:var(--rl);padding:32px;
+  box-shadow:var(--glass-shadow);position:relative;overflow:hidden;
+}
+.avc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(76,175,140,0.05) 0%,transparent 55%);pointer-events:none}
+.avt{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.avs{font-size:0.79rem;color:var(--text-mid);margin-bottom:18px}
+.avis{display:flex;flex-direction:column;gap:9px}
+.avi{display:flex;align-items:center;gap:9px;font-size:0.81rem;color:var(--text-mid)}
+.avi i{color:var(--green);font-size:0.76rem}
+.avcta{display:block;width:100%;margin-top:24px;padding:13px;background:var(--gold);color:var(--bg);text-align:center;font-size:0.79rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border-radius:50px;transition:transform var(--t),box-shadow var(--t)}
+.avcta:hover{transform:translateY(-2px);box-shadow:var(--sgold)}
+
+/* ═══════════ FOOTER ═══════════ */
+footer{
+  padding:26px 0;
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border-top:1px solid var(--glass-edge);
+}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.fc{font-size:0.73rem;color:var(--text-dim)}
+.fso{display:flex;gap:11px}
+.fs{
+  width:32px;height:32px;
+  background:var(--glass);backdrop-filter:blur(12px);
+  border:1px solid var(--glass-edge);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:0.76rem;color:var(--text-dim);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);
+  transition:border-color var(--t),color var(--t),transform var(--t);
+}
+.fs:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media(max-width:920px){
+  .hi,.ai,.coni{grid-template-columns:1fr;gap:46px}
+  .cci{grid-template-columns:1fr!important;direction:ltr!important}
+  .cv{min-height:230px}
+  .csi{flex-direction:column;align-items:flex-start}
+  .exg{grid-template-columns:1fr}
+  .edug{grid-template-columns:1fr}
+  .nm{display:none}
+  .nh{display:flex}
+  .ncta{display:none!important}
+}
+@media(max-width:560px){
+  .section{padding:68px 0}
+  .hstats{grid-template-columns:1fr 1fr}
+  .sn{font-size:1.75rem}
+  .sgrid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
+  .etags{grid-template-columns:1fr}
+  .cct{padding:24px 20px}
+  footer .wrap{flex-direction:column;align-items:flex-start;gap:11px}
+}
+/* ═══════════ CAMPAIGN GALLERY MODAL ═══════════ */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(6,9,15,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal-box{
+  background:var(--glass);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);border-radius:var(--rl);
+  box-shadow:var(--glass-shadow);
+  max-width:900px;width:100%;max-height:90vh;overflow-y:auto;padding:36px;position:relative;
+}
+.modal-box::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.04) 0%,transparent 55%);pointer-events:none;border-radius:inherit}
+.modal-close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--text-mid);font-size:1.2rem;cursor:pointer;transition:color var(--t)}
+.modal-close:hover{color:var(--text)}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.modal-sub{font-size:0.78rem;color:var(--text-dim);margin-bottom:26px}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.modal-img-wrap{border-radius:var(--r);overflow:hidden;border:1px solid var(--glass-edge);position:relative;min-height:180px;background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center}
+.modal-img-wrap img{width:100%;display:block;border-radius:0}
+.modal-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:30px;text-align:center;min-height:180px}
+.modal-ph i{font-size:2rem;color:var(--text-dim)}
+.modal-ph-label{font-size:0.72rem;color:var(--text-dim);line-height:1.5}
+.modal-ph-badge{font-size:0.64rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);background:var(--gold-m);border:1px solid var(--gold-b);padding:3px 10px;border-radius:50px}
+@media(max-width:560px){.modal-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="nav-logo">Timothy Richards</div>
-  <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="ni">
+    <a href="#hero" class="nl">Timothy <span>Richards</span></a>
+    <ul class="nm">
+      <li><a href="#about">About</a></li>
+      <li><a href="#case-studies">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact" class="ncta">Let's Connect</a></li>
+    </ul>
+    <div class="nh" onclick="openM()"><span></span><span></span><span></span></div>
+  </div>
 </nav>
-<header class="hero">
-  <div>
-    <div class="hero-eyebrow">Communications Portfolio</div>
-    <h1>Turning complex information into content that moves people.</h1>
-    <p class="hero-sub">Six years producing institutional publications, investment materials, editorial content, donor engagement communications and digital campaigns across the United Nations system, the private sector and public institutions. Based in Nairobi. Available for consultancy assignments.</p>
-    <a href="#work" class="hero-cta">View Work</a>
-  </div>
-  <div class="hero-stats">
-    <div class="stat-box">
-      <div class="stat-num">120+</div>
-      <div class="stat-label">Communications materials produced per year</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num">45%+</div>
-      <div class="stat-label">Newsletter open rate (sector average: 20–25%)</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num">6+</div>
-      <div class="stat-label">Years across the UN system, private sector and public institutions</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num">750K+</div>
-      <div class="stat-label">Reached across LinkedIn, X, Instagram and Facebook</div>
-    </div>
-  </div>
-</header>
-<section id="work">
-  <div class="section-label">Capabilities</div>
-  <h2 class="section-title">Three areas of specialism</h2>
-  <div class="rule"></div>
-  <div class="pillar-grid">
-    <div class="pillar" data-num="01">
-      <div class="pillar-title">Document &amp; Report Design</div>
-      <div class="pillar-desc">Institutional publications, financial reports, investment prospectuses, newsletters and branded knowledge products. Produced in Adobe InDesign and Illustrator.</div>
-    </div>
-    <div class="pillar" data-num="02">
-      <div class="pillar-title">Digital &amp; Web Content</div>
-      <div class="pillar-desc">Human interest stories, web articles, HTML email newsletters, social media campaigns and website content management. Published across UN-Habitat's global channels.</div>
-    </div>
-    <div class="pillar" data-num="03">
-      <div class="pillar-title">Events Communications</div>
-      <div class="pillar-desc">Event flyers, programmes, sponsorship materials, investor briefing packs and post-event content. Delivered across large-scale international conferences including the World Urban Forum.</div>
-    </div>
-  </div>
-  <div class="section-label" style="margin-top:8px;">Selected Work</div>
-  <h2 class="section-title">Publications and reports</h2>
-  <div class="rule"></div>
-  <p class="section-intro">Institutional publications produced for UN-Habitat, covering donor relations, financial reporting, investment prospectuses and editorial newsletters.</p>
-  <div class="work-grid">
-    <div class="work-card">
-      <div class="card-header">
-        <div class="card-tag">Newsletter — Lead Editor</div>
-        <div class="card-title">Urban Impact Newsletter</div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Quarterly donor-facing newsletter for UN-Habitat, reaching 5,000 to 10,000 global stakeholders. Curated editorial content, managed contributors across four regional offices and maintained open rates above 45%. Over 30 issues produced.</div>
-        <span class="card-role">Lead Editor and Designer</span>
-        <a class="card-link" href="https://new.express.adobe.com/webpage/NImV2GLEdK1Qi" target="_blank">View Issue 30</a>
-      </div>
-    </div>
-    <div class="work-card">
-      <div class="card-header" style="background:#1a5c52;">
-        <div class="card-tag">Investment Prospectus</div>
-        <div class="card-title">CIF Feasibility Fund Prospectus</div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Investment-grade publication produced for the Cities Investment Facility, a public-private, multi-stakeholder, multi-stage initiative established by UN-Habitat to address the urban infrastructure development gap while advancing the 17 Sustainable Development Goals. The programme unlocks private investment in urban infrastructure projects within low and middle income markets. The prospectus was designed to attract commercial investors, development finance institutions and philanthropic capital partners to the CIF Feasibility Fund.</div>
-        <span class="card-role">Design and Communications Contributor</span>
-        <a class="card-link" href="https://citiesinvestmentfacility.org/wp-content/uploads/2023/12/UN-Habitat-OED-CIF-Brochure-Feasibility-Fund-Prospectus.pdf" target="_blank">View Prospectus</a>
-      </div>
-    </div>
-    <div class="work-card">
-      <div class="card-header" style="background:#1e1e1e;">
-        <div class="card-tag">Financial Report</div>
-        <div class="card-title">Acquisition Report to Member States</div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Formal financial report to UN-Habitat Member States presenting donor acquisition data, funding pipeline analysis and earmarked contribution tracking across 90+ countries. Includes data visualisation of core and earmarked donor contributions.</div>
-        <span class="card-role">Report Design and Data Visualisation</span>
-        <a class="card-link" href="https://unhabitat.org/sites/default/files/2025/12/acquisition_report_to_member_states_-_nov_2025_1.pdf" target="_blank">View Report</a>
-      </div>
-    </div>
-    <div class="work-card">
-      <div class="card-header" style="background:#2c4a6e;">
-        <div class="card-tag">Annual Report</div>
-        <div class="card-title">UN-Habitat Annual Report 2024</div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Institutional annual report for UN-Habitat covering programme outcomes, financial performance and global impact across housing, migration and urban services portfolios for an organisation operating across 90+ countries.</div>
-        <span class="card-role">Editorial and Communications Contributor</span>
-        <a class="card-link" href="https://unhabitat.org/sites/default/files/2025/05/annual_report_2025_final.pdf" target="_blank">View Report</a>
-      </div>
-    </div>
-  </div>
-  <div class="section-label" style="margin-top:64px;">Events Communications</div>
-  <h2 class="section-title">World Urban Forum 12</h2>
-  <div class="rule"></div>
-  <p class="section-intro">Communications and event materials produced for the World Urban Forum 12 in Cairo, Egypt. Over 25,000 participants. 182 countries reached through digital campaigns.</p>
-  <div class="work-grid">
-    <div class="work-card">
-      <div class="card-header" style="background:#5c1a2e;">
-        <div class="card-tag">Event Flyer</div>
-        <div class="card-title">WUF 12 At a Glance</div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Official at-a-glance communications flyer for WUF 12 in Cairo, Egypt. Designed for broad stakeholder distribution covering the six thematic dialogues, event formats, roundtable programme and participation information for a 25,000+ attendee global conference.</div>
-        <span class="card-role">Design and Content Production</span>
-        <a class="card-link" href="https://wuf.unhabitat.org/" target="_blank">WUF Platform</a>
-      </div>
-    </div>
-    <div class="work-card">
-      <div class="card-header" style="background:#c8972a;">
-        <div class="card-tag">Investor Engagement</div>
-        <div class="card-title">Business and Foundations Roundtable</div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Pitch decks, sponsorship packages and investor briefing materials for the WUF 12 Business and Foundations Roundtable, produced within the Cities Investment Facility - public-private, multi-stakeholder, multi-stage initiative . Outreach contributed to a formal financial agreement with Shanghai SUS Environment.</div>
-        <span class="card-role">Content and Investment Packaging</span>
-        <a class="card-link" href="https://citiesinvestmentfacility.org" target="_blank">Cities Investment Facility</a>
-      </div>
-    </div>
-  </div>
-  <div class="section-label" style="margin-top:64px;">Digital and Web Content</div>
-  <h2 class="section-title">Stories and digital campaigns</h2>
-  <div class="rule"></div>
-  <p class="section-intro">Web articles and human interest narratives published on UN-Habitat's global platform, translating complex programme outcomes into accessible stories for diverse audiences.</p>
-  <div class="work-grid">
-    <div class="work-card">
-      <div class="card-header" style="background:#2e5c3a;">
-        <div class="card-tag">Web Article — Human Interest</div>
-        <div class="card-title">From Landless to Landowner in Nepal</div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Human interest story documenting a community land rights programme in Nepal, following a beneficiary's journey from landlessness to formal land ownership. Published on UN-Habitat's global website, demonstrating the ability to translate complex land tenure and legal processes into compelling narratives.</div>
-        <span class="card-role">Editor</span>
-        <a class="card-link" href="https://unhabitat.org/news/11-sep-2025/from-landless-to-landowner-in-nepal" target="_blank">Read Story</a>
-      </div>
-    </div>
-    <div class="work-card">
-      <div class="card-header">
-        <div class="card-tag">HTML Email Campaigns</div>
-        <div class="card-title">MDirector Institutional Newsletters</div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Built and distributed HTML and CSS institutional email newsletters through MDirector, managing full production from content development and contact segmentation through scheduling and dispatch. Sent 3 to 5 times per month. Subject line testing drove open rates above 45% and click-through rates above 5%.</div>
-        <span class="card-role">Production and Segmentation</span>
-        <a class="card-link" href="https://new.express.adobe.com/webpage/NImV2GLEdK1Qi" target="_blank">View Newsletter</a>
-      </div>
-    </div>
-  </div>
-  <!-- SOCIAL MEDIA CAMPAIGN -->
-<div class="section-label" style="margin-top: 48px;">Social Media</div>
-<h3 style="font-family: 'DM Serif Display', serif; font-size: 28px; letter-spacing: -0.5px; margin-bottom: 24px;">WUF 12 — Business and Foundations Campaign</h3>
-<div style="background: var(--light); padding: 36px; margin-bottom: 2px;">
-  <p style="font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 24px;">A coordinated multi-platform social media campaign produced for the World Urban Forum 12 Business and Foundations track, targeting private sector leaders, foundations and investors across LinkedIn and Facebook. The campaign was designed to drive registration and partner engagement for a curated investor activation event within a 25,000+ participant global conference. Content was adapted for each platform while maintaining consistent branding and messaging across the campaign.</p>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-    <div>
-      <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 10px;">LinkedIn — Single graphic post</div>
-      <img src="linkedin-wuf12.png" alt="WUF 12 Networking Opportunities LinkedIn post" style="width: 100%; border: 1px solid var(--rule);">
-    </div>
-    <div>
-      <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 10px;">Facebook — Five-panel carousel campaign</div>
-      <img src="facebook-wuf12.png" alt="WUF 12 Business and Foundations Facebook carousel" style="width: 100%; border: 1px solid var(--rule);">
-    </div>
-  </div>
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 16px;">
-    <div style="background: var(--paper); padding: 20px; text-align: center;">
-      <div style="font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--accent);">2</div>
-      <div style="font-size: 12px; color: var(--mid); text-transform: uppercase; letter-spacing: 0.05em;">Platforms</div>
-    </div>
-    <div style="background: var(--paper); padding: 20px; text-align: center;">
-      <div style="font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--accent);">5</div>
-      <div style="font-size: 12px; color: var(--mid); text-transform: uppercase; letter-spacing: 0.05em;">Carousel panels</div>
-    </div>
-    <div style="background: var(--paper); padding: 20px; text-align: center;">
-      <div style="font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--accent);">25K+</div>
-      <div style="font-size: 12px; color: var(--mid); text-transform: uppercase; letter-spacing: 0.05em;">Event participants</div>
-    </div>
-  </div>
+<div class="mm" id="mm">
+  <button class="mc" onclick="closeM()"><i class="fa fa-times"></i></button>
+  <a href="#about"        onclick="closeM()">About</a>
+  <a href="#case-studies" onclick="closeM()">Work</a>
+  <a href="#skills"       onclick="closeM()">Skills</a>
+  <a href="#contact"      onclick="closeM()">Contact</a>
 </div>
-</section>
-<section id="about">
-  <div class="section-label">About</div>
-  <h2 class="section-title">Timothy Richards</h2>
-  <div class="rule"></div>
-  <div class="about-grid">
-    <div class="about-block">
-      <p><strong>Communications and partnerships specialist</strong> with over six years of experience producing institutional publications, investment materials, editorial content, donor engagement communications and digital campaigns across the United Nations system, private sector and public institutions.</p>
-      <p>Based in Nairobi, Kenya. Available for assignments across document design, editorial production, event communications, fundraising communications and digital content within Africa and Beyond.</p>
-      <p>Fluent in English and Swahili. Proficient in the full Adobe Creative Suite including InDesign, Photoshop, Illustrator, Premiere Pro and Adobe Express.</p>
-      <div class="skills-list" style="margin-top:24px;">
-        <span class="skill-tag">Adobe InDesign</span>
-        <span class="skill-tag">Adobe Photoshop</span>
-        <span class="skill-tag">Adobe Illustrator</span>
-        <span class="skill-tag">Adobe Premiere Pro</span>
-        <span class="skill-tag">Adobe Express</span>
-        <span class="skill-tag">HTML Email</span>
-        <span class="skill-tag">Drupal CMS</span>
-        <span class="skill-tag">Social Media</span>
-        <span class="skill-tag">Data Visualisation</span>
-        <span class="skill-tag">Editorial Writing</span>
-        <span class="skill-tag">Human Interest Stories</span>
-        <span class="skill-tag">Report Design</span>
-      </div>
-    </div>
-    <div>
-      <div class="org-block">
-        <div class="org-dot"></div>
-        <div>
-          <div class="org-name">UN-Habitat — Donor Engagement Associate</div>
-          <div class="org-role">February 2025 to January 2026 · Nairobi, Kenya</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg"></div><div class="hgl"></div>
+  <div class="wrap">
+    <div class="hi">
+      <div>
+        <div class="hbadge reveal"><i class="fa fa-globe"></i> Strategic Communications · UN System · Nairobi</div>
+        <h1 class="hh reveal d1">Communications That<br>Moves People.<br><em>Content That Drives Action.</em></h1>
+        <p class="hs reveal d2">Six years producing the institutional publications, donor communications, investment narratives and digital campaigns that shape how global development organisations inform, engage and mobilise — across the United Nations system and beyond.</p>
+        <div class="acts reveal d3">
+          <a href="#case-studies" class="bp"><i class="fa fa-folder-open"></i> View My Work</a>
+          <a href="#contact" class="bs"><i class="fa fa-envelope"></i> Get in Touch</a>
+        </div>
+        <div class="hloc reveal d4">
+          <i class="fa fa-location-dot"></i>
+          <span class="adot"></span> Nairobi, Kenya &nbsp;·&nbsp; Available for global consultancy assignments
         </div>
       </div>
-      <div class="org-block">
-        <div class="org-dot"></div>
-        <div>
-          <div class="org-name">UN-Habitat — Resource Mobilisation Consultant</div>
-          <div class="org-role">April 2023 to February 2025 · Nairobi, Kenya</div>
+      <div class="hstats reveal d2">
+        <div class="sc sg">
+          <div class="sn">120<span>+</span></div>
+          <div class="sd2">Communications materials produced per year — publications, campaigns and digital content</div>
         </div>
-      </div>
-      <div class="org-block">
-        <div class="org-dot"></div>
-        <div>
-          <div class="org-name">UN-Habitat — Digital Marketing Individual Contractor</div>
-          <div class="org-role">August 2022 to February 2023 · Nairobi, Kenya</div>
+        <div class="sc">
+          <div class="sn">45<span>%</span></div>
+          <div class="sd2">Donor newsletter open rate — double the 20–25% sector average</div>
         </div>
-      </div>
-       <div class="org-block">
-        <div class="org-dot"></div>
-        <div>
-          <div class="org-name">Vertical Constructions Limited — Programme Coordination Associate  </div>
-          <div class="org-role">April 2022 to August 2022  · Nairobi, Kenya</div>
+        <div class="sc">
+          <div class="sn">750<span>K+</span></div>
+          <div class="sd2">Simultaneous reach across LinkedIn, X, Instagram and Facebook</div>
         </div>
-      </div>
-      <div class="org-block">
-        <div class="org-dot"></div>
-        <div>
-          <div class="org-name">UN-Habitat — Digital Marketing Intern</div>
-          <div class="org-role">October 2021 to April 2022 · Nairobi, Kenya</div>
-        </div>
-      </div>
-      <div class="org-block">
-        <div class="org-dot"></div>
-        <div>
-          <div class="org-name">Vertical Constructions Limited — Programme Support Assistant  </div>
-          <div class="org-role">June 2021 to September 2021  · Nairobi, Kenya</div>
-        </div>
-      </div>
-      <div class="org-block">
-        <div class="org-dot"></div>
-        <div>
-          <div class="org-name">Nzag Enterprises Limited — Operations and Partnerships Coordination Officer    </div>
-          <div class="org-role">April 2020 to June 2021  · Nairobi, Kenya</div>
-        </div>
-      </div>
-      <div class="org-block">
-        <div class="org-dot"></div>
-        <div>
-          <div class="org-name">Kenya Civil Aviation Authority — Corporate Communication Assistant</div>
-          <div class="org-role">April 2019 to March 2020 · Nairobi, Kenya</div>
+        <div class="sc">
+          <div class="sn">6<span>+</span></div>
+          <div class="sd2">Years embedded in the UN system, private sector and public institutions</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<div class="contact-strip" id="contact">
-  <div class="contact-headline">Available for communications consultancy assignments globally.</div>
-  <div class="contact-links">
-    <div class="contact-item">
-      <div class="contact-icon">✉</div>
-      <a href="mailto:otii.richards@gmail.com">otii.richards@gmail.com</a>
+
+<!-- ABOUT — consolidated: bio + interactive career history + education + languages -->
+<section id="about" class="section">
+  <div class="wrap">
+
+    <!-- Top 2-col: bio left, quick-facts right -->
+    <div class="ai">
+      <div>
+        <div class="scard reveal">
+          <div class="lbl" style="margin-bottom:14px">About</div>
+          <h2 class="st" style="margin-bottom:16px">Strategic Communications<br>for Work That<br><em style="font-style:italic;color:var(--gold)">Moves Resources.</em></h2>
+          <div class="ab">
+            <p>I work with <strong>UN agencies, international organisations, foundations and development institutions</strong> to produce the communications that inform Member States, engage investors and activate donor relationships — from flagship annual reports and institutional publications to conference pitch decks, donor newsletters and digital campaigns.</p>
+            <p>Open to <strong>short-term consultancy, embedded roles and project-based assignments</strong> in communications, donor engagement and resource mobilisation content. Based in Nairobi. Available globally.</p>
+          </div>
+          <div class="etags" style="margin-top:22px">
+            <div class="etag"><i class="fa fa-newspaper"></i> Institutional Publications</div>
+            <div class="etag"><i class="fa fa-envelope-open-text"></i> Donor Engagement Comms</div>
+            <div class="etag"><i class="fa fa-calendar-days"></i> Event Communications</div>
+            <div class="etag"><i class="fa fa-file-contract"></i> Investment & RM Content</div>
+            <div class="etag"><i class="fa fa-pen-nib"></i> Editorial Strategy</div>
+            <div class="etag"><i class="fa fa-globe"></i> Digital Campaigns</div>
+            <div class="etag"><i class="fa fa-feather-pointed"></i> Human Interest Storytelling</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="scard reveal d1">
+          <div class="slbl">Languages & Location</div>
+          <div class="lpills" style="margin-bottom:16px">
+            <span class="lp on">English — Fluent</span>
+            <span class="lp on">Swahili — Fluent</span>
+          </div>
+          <div style="font-size:0.78rem;color:var(--text-mid);display:flex;align-items:center;gap:8px;margin-top:4px">
+            <i class="fa fa-location-dot" style="color:var(--gold);font-size:0.72rem"></i>
+            Nairobi, Kenya &nbsp;·&nbsp; Available globally
+          </div>
+        </div>
+        <!-- Education cards in right column -->
+        <div class="scard reveal d2" style="padding:20px">
+          <div class="slbl">Education</div>
+          <div class="educ" style="margin-bottom:12px;padding:18px;background:rgba(255,255,255,0.02);border-radius:var(--r)">
+            <div class="edui"><i class="fa fa-graduation-cap"></i></div>
+            <div>
+              <div class="edud" style="font-size:0.9rem">Master of Arts — Project Planning and Management</div>
+              <div class="edus" style="font-size:0.74rem;margin-bottom:6px">University of Nairobi</div>
+              <span class="edust act"><i class="fa fa-circle"></i> In Progress</span>
+            </div>
+          </div>
+          <div class="educ" style="padding:18px;background:rgba(255,255,255,0.02);border-radius:var(--r)">
+            <div class="edui"><i class="fa fa-certificate"></i></div>
+            <div>
+              <div class="edud" style="font-size:0.9rem">BSc — Corporate Communications and Management</div>
+              <div class="edus" style="font-size:0.74rem;margin-bottom:6px">JKUAT, Kenya</div>
+              <span class="edust"><i class="fa fa-check"></i> Graduated</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="contact-item">
-      <div class="contact-icon">📞</div>
-      <a href="tel:+254741404824">+254 741 404 824</a>
+
+        <!-- Professional History — minimal static grid -->
+    <div class="about-bottom reveal">
+      <div class="scard" style="padding:28px;background:rgba(255,255,255,0.02);overflow:visible">
+        <div class="slbl" style="margin-bottom:20px">Professional History</div>
+        <div class="hist-grid">
+          <div class="hist-item"><div class="hist-period">Feb 2025 – Jan 2026</div><div class="hist-role">Donor Engagement Associate</div><div class="hist-org">UN-Habitat</div></div>
+          <div class="hist-item"><div class="hist-period">Apr 2023 – Feb 2025</div><div class="hist-role">Resource Mobilisation Consultant</div><div class="hist-org">UN-Habitat</div></div>
+          <div class="hist-item"><div class="hist-period">Aug 2022 – Feb 2023</div><div class="hist-role">Digital Marketing Individual Contractor</div><div class="hist-org">UN-Habitat</div></div>
+          <div class="hist-item"><div class="hist-period">Apr 2022 – Aug 2022</div><div class="hist-role">Programme Coordination Associate</div><div class="hist-org">Vertical Constructions Ltd</div></div>
+          <div class="hist-item"><div class="hist-period">Oct 2021 – Apr 2022</div><div class="hist-role">Digital Marketing Intern</div><div class="hist-org">UN-Habitat</div></div>
+          <div class="hist-item"><div class="hist-period">Jun 2021 – Sep 2021</div><div class="hist-role">Programme Support Assistant</div><div class="hist-org">Vertical Constructions Ltd</div></div>
+          <div class="hist-item"><div class="hist-period">Apr 2020 – Jun 2021</div><div class="hist-role">Operations &amp; Partnerships Coordination Officer</div><div class="hist-org">Nzag Enterprises Ltd</div></div>
+          <div class="hist-item"><div class="hist-period">Apr 2019 – Mar 2020</div><div class="hist-role">Corporate Communication Assistant</div><div class="hist-org">Kenya Civil Aviation Authority</div></div>
+        </div>
+      </div>
     </div>
-    <div class="contact-item">
-      <div class="contact-icon">in</div>
-      <a href="https://www.linkedin.com/in/timothy-richards-7a0a63177/" target="_blank">https://www.linkedin.com/in/timothy-richards-7a0a63177/</a>
+
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="case-studies" class="section">
+  <div class="wrap">
+    <div class="csi">
+      <div>
+        <div class="lbl reveal">Selected Work</div>
+        <h2 class="st reveal d1">Communications That<br>Moved the Needle</h2>
+      </div>
+      <p class="sub reveal d2">Seven case studies from my time in the UN system — each a distinct communications challenge turned into a measurable outcome.</p>
     </div>
-    <div class="contact-item">
-      <div class="contact-icon">📍</div>
-      <span style="color:rgba(255,255,255,0.6);">Nairobi, Kenya — Remote Available</span>
+
+    <!-- 01 Newsletter -->
+    <div class="cc reveal">
+      <div class="cci">
+        <div class="cv">
+          <img class="cvi" src="urbanimpact.png" alt="Urban Impact Newsletter" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div class="cvo"></div>
+          <div class="cvc">
+            <div class="ctag tg"><i class="fa fa-newspaper"></i> Editorial Leadership</div>
+            <div class="cvstat"><div class="cvn">45<span>%+</span></div><div class="cvl">Average open rate · 2× sector benchmark</div></div>
+          </div>
+        </div>
+        <div class="cct">
+          <div class="cnum">01</div>
+          <div class="ctag tg" style="margin-bottom:9px"><i class="fa fa-envelope-open-text"></i> Donor Communications</div>
+          <h3 class="ctitle">Urban Impact Newsletter — Turning a Quarterly into a Top-Performing Donor Asset</h3>
+          <div class="cctx">UN-Habitat · Lead Editor · 30+ Issues · 5,000–10,000 Global Stakeholders</div>
+          <div class="cbs">
+            <div><div class="cbl">Challenge</div><div class="cbt">UN-Habitat needed a donor-facing communications channel that could <strong>sustain relationships with thousands of global stakeholders</strong> across four regional offices — demonstrating programme relevance and accountability in a format donors would actually read.</div></div>
+            <div><div class="cbl">My Role & Actions</div><div class="cbt">As <strong>Lead Editor</strong>, I owned the full editorial cycle — content strategy, commissioning and editing contributions across four regional offices, writing key sections, and managing production via MDirector. Introduced <strong>subject-line testing and audience segmentation</strong> that measurably improved open rates.</div></div>
+            <div><div class="cbl">Impact</div><div class="cbt">Sustained open rates <strong>above 45%</strong> and click-through rates above 5%. Delivered 30+ consecutive issues, establishing the newsletter as UN-Habitat's primary donor engagement touchpoint.</div></div>
+          </div>
+          <div class="cms">
+            <div><div class="cmv">30<span>+</span></div><div class="cmd">Issues produced</div></div>
+            <div><div class="cmv">45<span>%</span></div><div class="cmd">Avg. open rate</div></div>
+            <div><div class="cmv">10<span>K</span></div><div class="cmd">Global subscribers</div></div>
+          </div>
+          <div class="cls">
+            <a href="https://new.express.adobe.com/webpage/NImV2GLEdK1Qi" target="_blank" class="cl">View Issue 30 <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 WUF 12 — EXPANDED -->
+    <div class="cc rev reveal d1">
+      <div class="cci">
+        <div class="cv">
+          <img class="cvi" src="wuf12.jpg" alt="WUF12 Event Communications Cairo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div class="cvo"></div>
+          <div class="cvc">
+            <div class="ctag tgr"><i class="fa fa-people-group"></i> Event Communications & Strategic Engagement</div>
+            <div class="cvstat"><div class="cvn">25<span>K+</span></div><div class="cvl">Participants · 182 countries · Cairo, Egypt · Nov 2024</div></div>
+          </div>
+        </div>
+        <div class="cct">
+          <div class="cnum">02</div>
+          <div class="ctag tgr" style="margin-bottom:9px"><i class="fa fa-calendar-days"></i> WUF12 · "It All Starts at Home"</div>
+          <h3 class="ctitle">Event Communications & Strategic Engagement — World Urban Forum 12, Cairo</h3>
+          <div class="cctx">4–6 November 2024 · Business & Foundations Assembly · Business and Foundations Roundtable · Donor Events · Cities Investment Facility</div>
+          <div class="cbs">
+            <div><div class="cbl">Context & Challenge</div><div class="cbt">WUF 12 convened around the theme <em>"It all starts at home"</em> in Cairo, Egypt, drawing 25,000+ participants from 182 countries. Within this global conference environment, the Cities Investment Facility required end-to-end communications strategy and event delivery across two flagship investor events — targeting private sector leaders, foundations, DFIs and bilateral donors to close the <strong>SDG 11 financing gap</strong>.</div></div>
+
+            <div style="background:rgba(76,175,140,0.06);border:1px solid rgba(76,175,140,0.18);border-radius:10px;padding:14px 16px">
+              <div class="cbl" style="color:var(--green);margin-bottom:5px"><i class="fa fa-users" style="margin-right:6px"></i> Business & Foundations Assembly — 4 November 2024</div>
+              <div class="cbt">Theme: <em>"Making Impact in Cities — Local Business."</em> Produced the concept note and full communications package — framing CIF's offer to private sector and foundation partners, structuring the session format (fire-starters, keynotes, panel, interactive Q&A), coordinating speaker briefs for high-level business leaders and development bank representatives. Expected outcomes: identify opportunities for private sector participation, address barriers to investment, and develop a collective plan of action for scaling private capital for local impact.</div>
+            </div>
+
+            <div style="background:rgba(76,175,140,0.06);border:1px solid rgba(76,175,140,0.18);border-radius:10px;padding:14px 16px">
+              <div class="cbl" style="color:var(--green);margin-bottom:5px"><i class="fa fa-handshake" style="margin-right:6px"></i> Business and Foundations Roundtable — 6 November 2024</div>
+              <div class="cbt">Theme: <em>"Unity in Action — Fostering Effective Partnerships for Our Common Goals."</em> Led session communications and speaker coordination for a 2-hour roundtable featuring 7 case studies from infrastructure projects to foundation-led initiatives. Participants included UN-Habitat Deputy Executive Director Michal Mlynár, Egyptian Real Estate Council, CAF, BMW Foundation, Sweco and Orascom Construction.</div>
+            </div>
+
+            <div><div class="cbl">Full Scope of Responsibility</div><div class="cbt">Concept note drafting · Session communications strategy · Speaker coordination briefings · Pitch deck and session slide preparation · Technical session coordination · Event reporting and post-event content · Donor breakfasts, donor luncheons, two dedicated UNHA sessions, donor appreciation sessions · Multi-platform digital campaign across LinkedIn and Facebook targeting private sector leaders and foundations.</div></div>
+          </div>
+          <div class="cms">
+            <div><div class="cmv">25<span>K+</span></div><div class="cmd">Participants</div></div>
+            <div><div class="cmv">182</div><div class="cmd">Countries</div></div>
+            <div><div class="cmv">2</div><div class="cmd">Flagship investor events delivered</div></div>
+          </div>
+          <div class="cls">
+            <a href="https://wuf.unhabitat.org/event/wuf12/business-and-foundations-assembly" target="_blank" class="cl">Business & Foundations Assembly <i class="fa fa-arrow-right"></i></a>
+            <a href="https://wuf.unhabitat.org/event/wuf12/business-foundations-and-philanthropies-roundtable" target="_blank" class="cl sec">Business and Foundations Roundtable <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02b WUF 13 — Concept Development Leadership -->
+    <div class="cc reveal" style="border-color:rgba(147,112,219,0.2)">
+      <div class="cci">
+        <div class="cv">
+          <img class="cvi" src="wuf13.jpg" alt="WUF13 Concept Development" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div class="cvo" style="background:linear-gradient(135deg,rgba(6,9,15,0.9) 0%,rgba(40,20,60,0.5) 100%)"></div>
+          <div class="cvc">
+            <div class="ctag tp"><i class="fa fa-lightbulb"></i> Concept Development Leadership</div>
+            <div class="cvstat"><div class="cvn">3</div><div class="cvl">Strategic concept notes authored · WUF 13 Baku, Azerbaijan · May 2026</div></div>
+          </div>
+        </div>
+        <div class="cct">
+          <div class="cnum" style="font-size:2rem">02b</div>
+          <div class="ctag tp" style="margin-bottom:9px"><i class="fa fa-file-pen"></i> WUF13 · Strategic Concept Notes · Baku 2026</div>
+          <h3 class="ctitle">WUF 13 — Lead Author Across Three Strategic Special Sessions</h3>
+          <div class="cctx">UN-Habitat · Donor Engagement Associate · Three Special Session Concept Notes · World Urban Forum 13 · Baku, Azerbaijan · May 2026</div>
+          <div class="cbs">
+            <div><div class="cbl">Context & Role</div><div class="cbt">Led development of three special session concept notes for WUF 13 — translating complex programme contexts into <strong>strategic investment narratives and cooperation frameworks</strong> for audiences of Member States, IFIs, UN agencies and development partners. Each note required multi-stakeholder alignment, donor framing analysis and strategic positioning of UN-Habitat as a lead implementing partner.</div></div>
+
+            <div style="background:rgba(147,112,219,0.06);border:1px solid rgba(147,112,219,0.18);border-radius:10px;padding:14px 16px">
+              <div class="cbl" style="color:#9370DB;margin-bottom:5px"><i class="fa fa-city" style="margin-right:6px"></i> Session 1 — Urban Recovery: Gaza & Ukraine</div>
+              <div class="cbt"><em>Coordinating Urban Recovery Pathways for Gaza and Ukraine.</em> Positioned UN-Habitat as the UN system's lead integrator for city-focused reconstruction — combining normative expertise, spatial assessments and operational presence to guide recovery across housing, land, infrastructure and municipal capacity. Framed a <strong>post-WUF13 cooperation mechanism</strong> to sustain technical dialogue, investment-ready pipelines and structured donor engagement. Target audience: Member States, IFIs, UN agencies and national/municipal representatives.</div>
+            </div>
+
+            <div style="background:rgba(147,112,219,0.06);border:1px solid rgba(147,112,219,0.18);border-radius:10px;padding:14px 16px">
+              <div class="cbl" style="color:#9370DB;margin-bottom:5px"><i class="fa fa-droplet" style="margin-right:6px"></i> Session 2 — Innovative Multi-Stakeholder Partnerships for Urban Basic Services</div>
+              <div class="cbt"><em>Thematic Dialogue on Innovative Multi-Stakeholder Partnerships for Urban Basic Services.</em> Examined emerging business models reshaping urban basic service delivery — including guarantee-based financing mechanisms, private sector participation frameworks and PPP models. Framed pathways to formalise collaboration through <strong>MoUs and Letters of Intent</strong>, aligned with UN-Habitat's Strategic Plan 2026–2029. Target audience: national governments, local authorities, private sector actors, utilities and DFIs.</div>
+            </div>
+
+            <div style="background:rgba(147,112,219,0.06);border:1px solid rgba(147,112,219,0.18);border-radius:10px;padding:14px 16px">
+              <div class="cbl" style="color:#9370DB;margin-bottom:5px"><i class="fa fa-earth-africa" style="margin-right:6px"></i> Session 3 — South–South Cooperation for Transformative Urban Development</div>
+              <div class="cbt"><em>Thematic Dialogue on South–South Cooperation (SSC) for Transformative Urban Development.</em> Developed the strategic case for SSC as a structured framework for urban cooperation — moving beyond ad hoc exchanges toward formalised peer learning, joint programming and triangular cooperation. Identified 3–4 priority thematic areas and explored a <strong>concrete post-WUF13 cooperation product (MoA/MoU)</strong> with UNOSSC. Target audience: Ministers, national urban focal points, Permanent Missions, UNOSSC leadership and DFIs engaged in SSC.</div>
+            </div>
+          </div>
+          <div class="cms">
+            <div><div class="cmv">3</div><div class="cmd">Concept notes authored</div></div>
+            <div><div class="cmv">3</div><div class="cmd">Post-WUF cooperation mechanisms proposed</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Institutional Reporting — Annual Report + Acquisition Report -->
+    <div class="cc reveal">
+      <div class="cci">
+        <div class="cv">
+          <img class="cvi" src="acqreport.png" alt="Institutional Reporting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div class="cvo"></div>
+          <div class="cvc">
+            <div class="ctag tb"><i class="fa fa-file-lines"></i> Institutional Reporting</div>
+            <div class="cvstat"><div class="cvn">193</div><div class="cvl">Member States audience · Annual Report + Acquisition Report</div></div>
+          </div>
+        </div>
+        <div class="cct">
+          <div class="cnum">03</div>
+          <div class="ctag tb" style="margin-bottom:9px"><i class="fa fa-landmark"></i> Annual Report & Acquisition Report</div>
+          <h3 class="ctitle">Making Complex Data Legible — Institutional Reporting for 193 Member States</h3>
+          <div class="cctx">UN-Habitat · Editorial Contributor + Report Design & Data Visualisation · 2024–2025</div>
+          <div class="cbs">
+            <div style="background:rgba(74,143,212,0.06);border:1px solid rgba(74,143,212,0.18);border-radius:10px;padding:12px 14px">
+              <div class="cbl" style="color:var(--blue);margin-bottom:4px"><i class="fa fa-book-open" style="margin-right:6px"></i>Annual Report 2024 — "Adequate Housing for All"</div>
+              <div class="cbt">Contributed as editorial author across UN-Habitat's flagship accountability publication — translating programme outcomes across housing, climate, migration and urban services into clear institutional narrative for donors, Member States and the global development community. Context: 2.8 billion people facing housing inadequacy; 1.1 billion in informal settlements.</div>
+            </div>
+            <div style="background:rgba(74,143,212,0.06);border:1px solid rgba(74,143,212,0.18);border-radius:10px;padding:12px 14px">
+              <div class="cbl" style="color:var(--blue);margin-bottom:4px"><i class="fa fa-chart-pie" style="margin-right:6px"></i>Acquisition Report to Member States — November 2025</div>
+              <div class="cbt">Led report design and data visualisation for UN-Habitat's formal resource mobilisation accountability document — structuring $144M in total earmarked grants across 26 contributing member states and 6 implementing regions (Arab States 30%, Africa 29%) into credible visual narratives. Average annual acquisition tracked across tenure: $170M+.</div>
+            </div>
+          </div>
+          <div class="cms">
+            <div><div class="cmv">193</div><div class="cmd">Member States audience</div></div>
+            <div><div class="cmv">$170<span>M+</span></div><div class="cmd">Avg. annual acquisition tracked</div></div>
+            <div><div class="cmv">2.8<span>B</span></div><div class="cmd">People in housing crisis</div></div>
+          </div>
+          <div class="cls">
+            <a href="https://unhabitat.org/sites/default/files/2025/05/annual_report_2025_final.pdf" target="_blank" class="cl">Annual Report 2024 <i class="fa fa-arrow-right"></i></a>
+            <a href="https://unhabitat.org/sites/default/files/2025/12/acquisition_report_to_member_states_-_nov_2025_1.pdf" target="_blank" class="cl sec">Acquisition Report Nov 2025 <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 Social Media & Digital -->
+    <div class="cc rev reveal d1">
+      <div class="cci">
+        <div class="cv">
+          <img class="cvi" src="linkedin-wuf12.png" alt="Digital Campaigns" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div class="cvo"></div>
+          <div class="cvc">
+            <div class="ctag tp"><i class="fa fa-share-nodes"></i> Digital Campaigns</div>
+            <div class="cvstat"><div class="cvn">750<span>K+</span></div><div class="cvl">Simultaneous reach · Four platforms</div></div>
+          </div>
+        </div>
+        <div class="cct">
+          <div class="cnum">04</div>
+          <div class="ctag tp" style="margin-bottom:9px"><i class="fa fa-bullhorn"></i> Social Media & Digital</div>
+          <h3 class="ctitle">Digital Campaigns & the UN-Habitat Funding Digest — Reach and Intelligence at Scale</h3>
+          <div class="cctx">UN-Habitat · LinkedIn · X · Instagram · Facebook · Internal Intelligence Brief</div>
+          <div class="cbs">
+            <div><div class="cbl">My Role & Actions</div><div class="cbt">Ran <strong>multi-platform campaigns</strong> across LinkedIn, X, Instagram and Facebook reaching 750,000+ people simultaneously, supporting institutional fundraising and partner engagement. Built <strong>executive reporting dashboards</strong> integrating campaign, web traffic and partner data for senior leadership. Produced the <strong>UN-Habitat Funding Digest</strong> — a bi-weekly internal intelligence brief on the humanitarian and financing landscape for partnership strategy.</div></div>
+            <div><div class="cbl">Impact</div><div class="cbt">750,000+ simultaneous reach. Dashboards directly informed senior leadership fundraising decisions. Funding Digest became a core internal resource for the resource mobilisation function.</div></div>
+          </div>
+          <div class="cms">
+            <div><div class="cmv">750<span>K+</span></div><div class="cmd">Simultaneous reach</div></div>
+            <div><div class="cmv">4</div><div class="cmd">Platforms managed</div></div>
+          </div>
+          <div class="cls">
+            <button onclick="openGallery()" class="cl" style="background:none;border:none;cursor:pointer;padding:0;font-family:inherit"><i class="fa fa-images"></i> View Campaign Screenshots <i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 Human Interest Writing -->
+    <div class="cc reveal">
+      <div class="cci">
+        <div class="cv">
+          <img class="cvi" src="humaninterest.jpg" alt="Human Interest Stories" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div class="cvo"></div>
+          <div class="cvc">
+            <div class="ctag tg"><i class="fa fa-feather-pointed"></i> Human Interest Writing</div>
+            <div class="cvstat"><div class="cvn"><i class="fa fa-globe" style="font-size:1.4rem;color:var(--gold)"></i></div><div class="cvl">Published on UN-Habitat's global platform</div></div>
+          </div>
+        </div>
+        <div class="cct">
+          <div class="cnum">05</div>
+          <div class="ctag tg" style="margin-bottom:9px"><i class="fa fa-pen-nib"></i> Editorial Writing</div>
+          <h3 class="ctitle">Human Interest Stories — Translating Lives into Policy-Relevant Narratives</h3>
+          <div class="cctx">UN-Habitat · Writer & Editor · Published on UN-Habitat Global Platform</div>
+          <div class="cbs">
+            <div><div class="cbl">Role</div><div class="cbt">Wrote and edited human interest stories for UN-Habitat's global website — translating complex programme outcomes and beneficiary experiences into <strong>accessible, emotionally resonant narratives</strong> for diverse international audiences including donors, Member States and the global public.</div></div>
+            <div><div class="cbl">Sample — "From Landless to Landowner in Nepal"</div><div class="cbt">Documented a community land rights programme in Nepal, following a beneficiary's journey from landlessness to formal land ownership. Translated complex <strong>land tenure and legal processes</strong> into a compelling human narrative published on UN-Habitat's global platform.</div></div>
+          </div>
+          <div class="cls">
+            <a href="https://unhabitat.org/news/11-sep-2025/from-landless-to-landowner-in-nepal" target="_blank" class="cl">Read Story <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- 06 CIF Prospectus — Standalone -->
+    <div class="cc reveal">
+      <div class="cci">
+        <div class="cv">
+          <img class="cvi" src="cif.jpg" alt="CIF Feasibility Fund Prospectus" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div class="cvo" style="background:linear-gradient(135deg,rgba(6,9,15,0.9) 0%,rgba(20,30,50,0.5) 100%)"></div>
+          <div class="cvc">
+            <div class="ctag tb"><i class="fa fa-building-columns"></i> Investment Publication · October 2023</div>
+            <div class="cvstat"><div class="cvn">$50<span>M</span></div><div class="cvl">Fund target · Capable of catalysing $1.5B in construction financing</div></div>
+          </div>
+        </div>
+        <div class="cct">
+          <div class="cnum">06</div>
+          <div class="ctag tb" style="margin-bottom:9px"><i class="fa fa-file-contract"></i> Blended Finance · CIF Feasibility Fund</div>
+          <h3 class="ctitle">CIF Feasibility Fund Prospectus — The Investment Case for a $50M Urban Infrastructure Fund</h3>
+          <div class="cctx">Cities Investment Facility · UN-Habitat Office of the Executive Director · October 2023 · LMIC Urban Infrastructure Markets</div>
+          <div class="cbs">
+            <div><div class="cbl">Challenge</div><div class="cbt">Communicate a technically complex blended finance structure — three investment instruments, a multi-partner ecosystem (Gensler, South Pole, Smart Cities Network, EMIF Group) — to three distinct audiences: <strong>commercial investors, DFIs and philanthropic capital partners</strong>, each needing different framings of risk, return and impact.</div></div>
+            <div><div class="cbl">My Role & Actions</div><div class="cbt">Served as <strong>Design and Communications Lead</strong> for the Office of the Executive Director — structuring the full investor narrative, building the visual framework, and translating CIF's methodology and SDG data into capital mobilisation content. Core message: every <strong>$1M donor → $2M private preparation + $30M+ construction financing</strong>.</div></div>
+            <div><div class="cbl">Impact</div><div class="cbt">Became the primary investor engagement tool for CIF's fundraising across 90+ countries, which directly contributed to a formal financial agreement with<strong>Shanghai SUS Environment</strong> at WUF12 in Cairo.</div></div>
+          </div>
+          <div class="cms">
+            <div><div class="cmv">$50<span>M</span></div><div class="cmd">Fund target</div></div>
+            <div><div class="cmv">$1.5<span>B</span></div><div class="cmd">Catalytic potential</div></div>
+            <div><div class="cmv">$15<span>T</span></div><div class="cmd">Infrastructure gap</div></div>
+          </div>
+          <div class="cls">
+            <a href="https://citiesinvestmentfacility.org/wp-content/uploads/2023/12/UN-Habitat-OED-CIF-Brochure-Feasibility-Fund-Prospectus.pdf" target="_blank" class="cl">View Prospectus <i class="fa fa-arrow-right"></i></a>
+            <a href="https://citiesinvestmentfacility.org" target="_blank" class="cl sec">Cities Investment Facility <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="wrap">
+    <div class="lbl reveal">Capabilities</div>
+    <h2 class="st reveal d1">Tools & Technical Skills</h2>
+    <p class="sub reveal d2">A complete creative and technical toolkit — from institutional design and editorial production to donor CRM, analytics and digital campaigns.</p>
+
+    <div class="sclbl reveal">Design & Publishing</div>
+    <div class="sgrid reveal d1">
+      <div class="skc kg"><div class="siw iid"><span class="aa">Id</span></div><div class="skn">Adobe InDesign</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+      <div class="skc kg"><div class="siw iai"><span class="aa">Ai</span></div><div class="skn">Adobe Illustrator</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+      <div class="skc kb"><div class="siw ips"><span class="aa">Ps</span></div><div class="skn">Adobe Photoshop</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+      <div class="skc kp"><div class="siw ipr"><span class="aa">Pr</span></div><div class="skn">Adobe Premiere Pro</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div></div>
+      <div class="skc kr"><div class="siw iex"><span class="aa">Ex</span></div><div class="skn">Adobe Express</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+    </div>
+
+    <div class="sclbl reveal">Pipeline, CRM & Analytics</div>
+    <div class="sgrid reveal d1">
+      <div class="skc kb"><div class="siw isf"><span class="aa">SF</span></div><div class="skn">Salesforce CRM</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+      <div class="skc kg"><div class="siw ipb"><span class="aa">PBI</span></div><div class="skn">Power BI</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+      <div class="skc kgr"><div class="siw iga"><span class="aa">GA</span></div><div class="skn">Google Analytics</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+      <div class="skc kgr"><div class="siw igr"><i class="fa fa-chart-bar"></i></div><div class="skn">Data Visualisation</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+      <div class="skc kp"><div class="siw ip"><i class="fa fa-database"></i></div><div class="skn">Donor Intelligence Platform</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+    </div>
+
+    <div class="sclbl reveal">Digital & Content</div>
+    <div class="sgrid reveal d1">
+      <div class="skc kb"><div class="siw imt"><span class="aa">Meta</span></div><div class="skn">Meta Ads Manager</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+      <div class="skc kb"><div class="siw idr"><span class="aa">Dr</span></div><div class="skn">Drupal CMS</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+      <div class="skc kb"><div class="siw ib"><i class="fa fa-code"></i></div><div class="skn">HTML / CSS Email</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+      <div class="skc kb"><div class="siw ib"><i class="fab fa-linkedin-in"></i></div><div class="skn">Social Media Strategy</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+      <div class="skc kgr"><div class="siw igr"><i class="fa fa-envelope"></i></div><div class="skn">MDirector / ESP</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+    </div>
+
+    <div class="sclbl reveal">Strategic Competencies</div>
+    <div class="sgrid reveal d1">
+      <div class="skc kg"><div class="siw ig"><i class="fa fa-pen-nib"></i></div><div class="skn">Editorial Writing</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+      <div class="skc kg"><div class="siw ig"><i class="fa fa-file-lines"></i></div><div class="skn">Institutional Publications</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+      <div class="skc kp"><div class="siw ip"><i class="fa fa-hand-holding-dollar"></i></div><div class="skn">Donor Engagement</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+      <div class="skc kgr"><div class="siw igr"><i class="fa fa-users"></i></div><div class="skn">Stakeholder Engagement</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+      <div class="skc kg"><div class="siw ig"><i class="fa fa-file-invoice-dollar"></i></div><div class="skn">Investment Packaging</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+      <div class="skc kg"><div class="siw ig"><i class="fa fa-feather-pointed"></i></div><div class="skn">Human Interest Writing</div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="coni">
+      <div>
+        <div class="lbl reveal">Contact</div>
+        <h2 class="cttl reveal d1">Ready to Work on<br>Something <em>That Matters?</em></h2>
+        <p class="cp reveal d2">I work with UN agencies, international organisations and development institutions on communications, donor engagement and strategic partnerships. Based in Nairobi — open to global consultancy assignments, short-term contracts and embedded roles.</p>
+        <div class="cits reveal d3">
+          <a href="mailto:otii.richards@gmail.com?subject=Inquiry%20from%20Portfolio" class="cit">
+            <div class="cion"><i class="fa fa-envelope"></i></div>
+            <div><div class="cil">Email</div><div class="civ">otii.richards@gmail.com</div></div>
+          </a>
+          <a href="tel:+254741404824" class="cit">
+            <div class="cion"><i class="fa fa-phone"></i></div>
+            <div><div class="cil">Phone</div><div class="civ">+254 741 404 824</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/timothy-richards-7a0a63177/" target="_blank" class="cit">
+            <div class="cion"><i class="fab fa-linkedin-in"></i></div>
+            <div><div class="cil">LinkedIn</div><div class="civ">timothy-richards-7a0a63177</div></div>
+          </a>
+          <div class="cit">
+            <div class="cion"><i class="fa fa-location-dot"></i></div>
+            <div><div class="cil">Location</div><div class="civ">Nairobi, Kenya · Remote Available</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="avc reveal d2">
+        <div class="avt">Currently Available For</div>
+        <div class="avs">Accepting consultancy assignments and contract roles globally</div>
+        <div class="avis">
+          <div class="avi"><i class="fa fa-circle-check"></i> Institutional publications & report design</div>
+          <div class="avi"><i class="fa fa-circle-check"></i> Donor engagement strategy & materials</div>
+          <div class="avi"><i class="fa fa-circle-check"></i> Editorial strategy & content production</div>
+          <div class="avi"><i class="fa fa-circle-check"></i> Investment packaging & prospectus writing</div>
+          <div class="avi"><i class="fa fa-circle-check"></i> Event communications (conferences, forums)</div>
+          <div class="avi"><i class="fa fa-circle-check"></i> Digital campaigns & social media strategy</div>
+          <div class="avi"><i class="fa fa-circle-check"></i> HTML email newsletter production</div>
+        </div>
+        <a href="mailto:otii.richards@gmail.com?subject=Inquiry%20from%20Portfolio" class="avcta">Start a Conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGN GALLERY MODAL -->
+<div class="modal-overlay" id="galleryModal" onclick="if(event.target===this)closeGallery()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeGallery()"><i class="fa fa-times"></i></button>
+    <div class="modal-title">WUF 12 — Business & Foundations Campaign</div>
+    <div class="modal-sub">Multi-platform social media campaign · LinkedIn · Facebook · 182 countries reached</div>
+    <div class="modal-grid">
+      <div class="modal-img-wrap">
+        <img src="linkedin-wuf12.png" alt="WUF12 LinkedIn campaign — Networking Opportunities for Business & Foundations" style="width:100%;display:block;border-radius:0" />
+      </div>
+      <div class="modal-img-wrap">
+        <img src="facebook-wuf12.png" alt="WUF12 Facebook 5-panel carousel — Business & Foundations campaign" style="width:100%;display:block;border-radius:0" />
+      </div>
+    </div>
+    <div style="margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.06)">
+      <div style="font-size:0.72rem;color:var(--text-dim);display:flex;gap:24px;flex-wrap:wrap">
+        <span><i class="fa fa-users" style="color:var(--gold);margin-right:6px"></i>25,000+ event participants</span>
+        <span><i class="fa fa-globe" style="color:var(--gold);margin-right:6px"></i>182 countries reached</span>
+        <span><i class="fa fa-image" style="color:var(--gold);margin-right:6px"></i>5 carousel panels (Facebook)</span>
+        <span><i class="fa fa-share-nodes" style="color:var(--gold);margin-right:6px"></i>2 platforms</span>
+      </div>
     </div>
   </div>
 </div>
-<footer>© 2026 Timothy Richards · Communications Portfolio</footer>
+
+<footer>
+  <div class="wrap">
+    <div class="fc">© 2026 Timothy Richards · Strategic Communications Portfolio</div>
+    <div class="fso">
+      <a href="https://www.linkedin.com/in/timothy-richards-7a0a63177/" target="_blank" class="fs"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:otii.richards@gmail.com?subject=Inquiry%20from%20Portfolio" class="fs"><i class="fa fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── GALLERY MODAL ── */
+function openGallery()  { document.getElementById('galleryModal').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeGallery() { document.getElementById('galleryModal').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeGallery(); });
+
+/* ── EMAIL: plain mailto links used directly ── */
+
+/* ── PROGRESSIVE REVEAL ── */
+document.body.classList.add('js-ready');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── Professional history is now a static grid ── */
+
+/* ── NAVBAR ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('sc', window.scrollY > 50);
+  const secs = ['hero','about','case-studies','skills','contact'];
+  let cur = '';
+  secs.forEach(id
+
+<script>
+/* ── GALLERY MODAL ── */
+function openGallery()  { document.getElementById('galleryModal').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeGallery() { document.getElementById('galleryModal').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeGallery(); });
+
+/* ── PROGRESSIVE REVEAL ── */
+document.body.classList.add('js-ready');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── NAVBAR ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('sc', window.scrollY > 50);
+  const secs = ['hero','about','case-studies','skills','contact'];
+  let cur = '';
+  secs.forEach(id => { const el=document.getElementById(id); if(el && window.scrollY >= el.offsetTop-130) cur=id; });
+  document.querySelectorAll('.nm a').forEach(a => a.classList.toggle('active', a.getAttribute('href')==='#'+cur));
+}, {passive:true});
+
+/* ── MOBILE MENU ── */
+function openM()  { document.getElementById('mm').classList.add('open'); }
+function closeM() { document.getElementById('mm').classList.remove('open'); }
+</script>
 </body>
 </html>
