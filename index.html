@@ -804,7 +804,7 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
             <div><div class="cmv">4</div><div class="cmd">Platforms managed</div></div>
           </div>
           <div class="cls">
-            <button onclick="document.getElementById('galleryModal').classList.add('open');document.body.style.overflow='hidden';" class="cl" style="background:none;border:none;cursor:pointer;padding:0;font-family:inherit"><i class="fa fa-images"></i> View Campaign Screenshots <i class="fa fa-arrow-right"></i></button>
+            <button onclick="document.getElementById('galleryModal').style.display='flex';document.body.style.overflow='hidden';" class="cl" style="background:none;border:none;cursor:pointer;padding:0;font-family:inherit"><i class="fa fa-images"></i> View Campaign Screenshots <i class="fa fa-arrow-right"></i></button>
           </div>
         </div>
       </div>
@@ -966,9 +966,9 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 </section>
 
 <!-- CAMPAIGN GALLERY MODAL -->
-<div class="modal-overlay" id="galleryModal" onclick="if(event.target===this)closeGallery()">
+<div class="modal-overlay" id="galleryModal" style="display:none" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow='';}">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeGallery()"><i class="fa fa-times"></i></button>
+    <button class="modal-close" onclick="document.getElementById('galleryModal').style.display='none';document.body.style.overflow=''"><i class="fa fa-times"></i></button>
     <div class="modal-title">WUF 12 — Business & Foundations Campaign</div>
     <div class="modal-sub">Multi-platform social media campaign · LinkedIn · Facebook · 182 countries reached</div>
     <div class="modal-grid">
@@ -1001,10 +1001,6 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 </footer>
 
 <script>
-/* ── GALLERY MODAL ── */
-function openGallery()  { document.getElementById('galleryModal').classList.add('open'); document.body.style.overflow='hidden'; }
-function closeGallery() { document.getElementById('galleryModal').classList.remove('open'); document.body.style.overflow=''; }
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeGallery(); });
 
 /* ── EMAIL: plain mailto links used directly ── */
 
@@ -1028,10 +1024,6 @@ window.addEventListener('scroll', () => {
   secs.forEach(id
 
 <script>
-/* ── GALLERY MODAL ── */
-function openGallery()  { document.getElementById('galleryModal').classList.add('open'); document.body.style.overflow='hidden'; }
-function closeGallery() { document.getElementById('galleryModal').classList.remove('open'); document.body.style.overflow=''; }
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeGallery(); });
 
 /* ── PROGRESSIVE REVEAL ── */
 document.body.classList.add('js-ready');
